@@ -10,7 +10,7 @@ import Layout from "components/Layout"
 import { getMaxDataDate } from "common/utils.js"
 import { hydrate, render } from "react-dom"
 
-const production = window.location.href.includes("madnight.github.io")
+const production = window.location.href.includes(".github.io")
 
 const main = async () => {
     const { year, quarter } = await getMaxDataDate()

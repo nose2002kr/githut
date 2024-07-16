@@ -10,14 +10,11 @@
  * @see {@link https://creativecommons.org/licenses/by-nc/3.0/}
  */
 
-import { isMobile } from "react-device-detect"
-
 export default {
     credits: { enabled: false },
     chart: {
         type: "spline",
         backgroundColor: "transparent",
-        width: isMobile ? 0 : 1400,
     },
     title: { text: "" },
     xAxis: { categories: [],

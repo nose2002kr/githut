@@ -25,7 +25,7 @@ export default function LangChart(props) {
     let visible
     const style = {
         margin: "auto",
-        maxWidth: "100%",
+        maxWidth: "1400px",
     }
 
     /**

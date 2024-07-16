@@ -10,19 +10,12 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-  
 jobs:
   build:
-
     env:
         DISPLAY: :99.0
 
     runs-on: ubuntu-latest
-
 
     strategy:
       matrix:
@@ -40,13 +33,9 @@ jobs:
     # - run: sudo apt-get install xvfb
     # - run: xvfb-run --auto-servernum npm run jest
     # - run: npm run lint
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-pages-artifact@v3
       with:
         path: build
-        name: github-pages
-    - name: Setup Pages
-      uses: actions/configure-pages@v5
-    
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+  publish:
+    needs: build
+    uses: ./.github/workflows/npm-publish-github.yml
